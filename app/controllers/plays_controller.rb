@@ -11,6 +11,20 @@ class PlaysController < ApplicationController
 			
 	end
 
+	def new
+		@play = curret_user.play.build
+	end
+
+	def create
+		@play = curret_user.play.build(play_params)
+
+		if @play.save
+			redirect_to root_path
+		else
+			render 'new'
+		end
+	end
+
 	def edit
 		
 	end
@@ -21,20 +35,6 @@ class PlaysController < ApplicationController
 			redirect_to @play
 		else
 			render 'edit'
-		end
-	end
-
-	def new
-		@play = Play.new
-	end
-
-	def create
-		@play = Play.new(play_params)
-
-		if @play.save
-			redirect_to root_path
-		else
-			render 'new'
 		end
 	end
 
