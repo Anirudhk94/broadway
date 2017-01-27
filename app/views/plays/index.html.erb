@@ -1,5 +1,8 @@
 <% @plays.each do |play| %>
-	<h2><%=link_to play.title, play_path(play.id) %></h2> <br/>
-
+	<% if params[:category] == play.category.name %>
+		<h2><%=link_to play.title, play_path(play.id) %></h2> <br/>
+	<%elsif params[:category] == nil %>
+		<h2><%=link_to play.title, play_path(play.id) %></h2> <br/>	
+	<% end %>
 <% end %>
 

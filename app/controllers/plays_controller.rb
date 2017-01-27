@@ -2,6 +2,7 @@ class PlaysController < ApplicationController
 	before_action :find_play, only: [:show, :edit, :destroy, :update]
 
 
+
 	def index
 		@plays = Play.all.order('created_at DESC')
 		
@@ -18,7 +19,6 @@ class PlaysController < ApplicationController
 
 	def create
 		@play = current_user.plays.build(play_params)
-		#@play.category_id = params[:category_id];
 
 		if @play.save
 			redirect_to root_path
@@ -33,7 +33,6 @@ class PlaysController < ApplicationController
 	end
 
 	def update
-		@play.category_id = params[:category_id];
 
 		if @play.update(play_params)
 			redirect_to @play
