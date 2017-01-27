@@ -11,6 +11,19 @@ class PlaysController < ApplicationController
 			
 	end
 
+	def edit
+		
+	end
+
+	def update
+
+		if @play.update(play_params)
+			redirect_to @play
+		else
+			render 'edit'
+		end
+	end
+
 	def new
 		@play = Play.new
 	end
@@ -22,6 +35,12 @@ class PlaysController < ApplicationController
 			redirect_to root_path
 		else
 			render 'new'
+		end
+	end
+
+	def destroy
+		if @play.destroy
+			redirect_to root_path
 		end
 	end
 

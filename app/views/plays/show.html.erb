@@ -2,4 +2,6 @@
 <h3><%= @play.director %> </h3>
 <p><%= @play.description %> </p> 
 
-<%= link_to "Back", plays_path %>
+<%= link_to "Back", plays_path %> |
+<%= link_to "Edit", edit_play_path(@play.id) %> |
+<%= link_to "Delete", play_path(@play.id), method: :delete %>
