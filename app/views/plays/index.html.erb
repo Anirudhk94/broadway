@@ -7,13 +7,13 @@
 <% @plays.each do |play| %>
 	<% if params[:category] == play.category.name %>
 		
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<a href="/plays/<%= play.id %>">
 					<img src="<%= play.play_img %>" class="play">
 				</a>
 			</div>
 	<%elsif params[:category] == nil %>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<a href="/plays/<%= play.id %>">
 					<img src="<%= play.play_img %>" class="play">
 				</a>			
