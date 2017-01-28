@@ -3,12 +3,23 @@
 <% end -%>
 
 
-
+<div class="row">
 <% @plays.each do |play| %>
 	<% if params[:category] == play.category.name %>
-		<h2><%=link_to play.title, play_path(play.id) %></h2> <br/>
+		
+			<div class="col-md-4">
+				<a href="/plays/<%= play.id %>">
+					<img src="<%= play.play_img %>" class="play">
+				</a>
+			</div>
 	<%elsif params[:category] == nil %>
-		<h2><%=link_to play.title, play_path(play.id) %></h2> <br/>	
+			<div class="col-md-4">
+				<a href="/plays/<%= play.id %>">
+					<img src="<%= play.play_img %>" class="play">
+				</a>			
+			</div>
 	<% end %>
 <% end %>
+</div>
+
 
