@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
-	before_action :find_play, only: [:new, :create, :edit, :update]
+	before_action :find_play, only: [:new, :create, :edit, :update, :show]
+
+	def show
+		@reviews = @play.reviews.all
+	end
 
 	def new
 		
@@ -16,7 +20,6 @@ class ReviewsController < ApplicationController
 		else
 			render 'new'
 		end
-
 	end
 
 	private
