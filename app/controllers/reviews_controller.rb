@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-	before_action :find_play, only: [:new, :create, :edit, :update, :show]
+	before_action :find_play, only: [:new, :create, :edit, :update, :show, :destroy]
 
 	def show
 		@reviews = @play.reviews.all
@@ -19,6 +19,28 @@ class ReviewsController < ApplicationController
 			redirect_to @play
 		else
 			render 'new'
+		end
+	end
+
+	def edit
+		@review = Review.find(params[:id])
+	end
+
+	def update
+		@review = Review.find(params[:id])
+		if @review.update(review_params)
+			redirect_to @play
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@review = Review.find(params[:id])
+		if @review.destroy
+			redirect_to @play
+		else
+			render 'edit'
 		end
 	end
 
