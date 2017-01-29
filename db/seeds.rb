@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {email: "admin@broadway.com", encrypted_password: "$2a$11$CSfSaj8iN6A.uc.5meU18ujjMtU7rxb9tgYm0lCAO8JFuogUi3w5.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-01-29 15:08:50", last_sign_in_at: "2017-01-29 15:08:50", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
+])
+Category.create!([
+  {name: "Classical"},
+  {name: "Drama"},
+  {name: "Comedy"}
+])
+Play.create!([
+  {title: "Hamilton", description: "Tacos fingerstache street art knausgaard chillwave, post-ironic locavore hoodie kickstarter fixie 8-bit iPhone actually godard ethical. Enamel pin paleo pop-up, craft beer whatever literally forage la croix cred jianbing asymmetrical tbh succulents. Chambray man braid 90's, helvetica polaroid poke fashion axe aesthetic four loko woke ennui humblebrag occupy. Drinking vinegar narwhal beard messenger bag meggings enamel pin, forage hot chicken. Pitchfork gentrify small batch, raw denim blog post-ironic narwhal DIY stumptown chicharrones hashtag. Bitters flannel small batch, umami succulents roof party mustache. Keytar pug vinyl, yuccie hexagon succulents small batch taxidermy tumeric tofu schlitz kinfolk tilde cornhole.", director: "Thomas Kail", user_id: 1, category_id: 1, play_img_file_name: "hamilton.jpeg", play_img_content_type: "image/jpeg", play_img_file_size: 6483, play_img_updated_at: "2017-01-29 15:09:46"},
+  {title: "Wicked", description: "Selfies leggings trust fund, squid lyft disrupt freegan paleo cold-pressed narwhal messenger bag plaid. Gentrify flexitarian prism tousled live-edge, fam waistcoat. Try-hard microdosing irony kogi, thundercats typewriter green juice live-edge viral wolf tumeric iceland. Brunch pop-up PBR&B tilde ugh hashtag messenger bag. Chartreuse intelligentsia meggings, bitters typewriter scenester activated charcoal tumeric meditation ugh brunch slow-carb kickstarter jean shorts mumblecore. Enamel pin meh plaid, raclette bushwick pop-up snackwave four dollar toast offal. Humblebrag freegan master cleanse, glossier post-ironic drinking vinegar yr schlitz.", director: "Jerry Mitchell", user_id: 1, category_id: 2, play_img_file_name: "wicked.jpg", play_img_content_type: "image/jpeg", play_img_file_size: 22506, play_img_updated_at: "2017-01-29 15:10:14"},
+  {title: "Phantom of Opera", description: "Pug twee hell of actually. Mixtape banjo XOXO affogato kombucha microdosing. Cray kombucha flexitarian, mlkshk ennui locavore raclette. Roof party cronut edison bulb, chillwave semiotics tumeric hammock tilde letterpress succulents tousled taxidermy four loko humblebrag. Cronut cred authentic, la croix air plant raw denim celiac stumptown tilde twee migas irony iPhone keytar tumblr. Intelligentsia yuccie kombucha raw denim, umami gastropub direct trade poutine fanny pack meggings pop-up biodiesel knausgaard leggings master cleanse. Vape fam franzen raclette beard, cold-pressed raw denim sriracha tumeric readymade godard humblebrag trust fund mustache.", director: "Casey Nicholaw and Trey Parker", user_id: 1, category_id: 3, play_img_file_name: "phantom.jpg", play_img_content_type: "image/jpeg", play_img_file_size: 13525, play_img_updated_at: "2017-01-29 15:11:03"}
+])

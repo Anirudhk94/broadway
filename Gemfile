@@ -37,6 +37,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails' 
+gem 'seed_dump'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
