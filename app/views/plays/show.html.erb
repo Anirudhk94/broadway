@@ -7,7 +7,17 @@
 		<h2 class="play-title"><%=@play.title %></h2> 
 		<h3 class="play-director"><span><em>From  </em>:</span> <%= @play.director %> </h3>
 		<h4 class="play-category"><%= @play.category.name %> </h4>
+		<h4 class="average-rating">Average Rating </h4>
+		<div class="average-review-rating" data-score="<%= @average_rating %>"></div>
+		<span class="number-of-reviews"><em><%= @play.reviews.count%> reviews </em></span>
 		<p class="play-desc"><%= @play.description %> </p>
+	</div>
+
+	<div class="links btn-group">
+		<% if user_signed_in? && @play.user_id == current_user.id %>
+			 <%= link_to "Edit", edit_play_path(@play.id), class: 'btn btn-custom' %> 
+			  <%= link_to "Delete", play_path(@play.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-custom' %>
+		<% end  %>
 	</div>
 </div>
 
@@ -24,13 +34,7 @@
 	</div>
 </div>
 
-<div class="links btn-group">
-		<%= link_to "Back", plays_path, class: 'btn btn-custom' %> 
-		<% if user_signed_in? && @play.user_id == current_user.id %>
-			 <%= link_to "Edit", edit_play_path(@play.id), class: 'btn btn-custom' %> 
-			  <%= link_to "Delete", play_path(@play.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-custom' %>
-		<% end  %>
-</div>
+
 
 <script>
 	$('.review-rating').raty({
@@ -44,3 +48,13 @@
 </script>
 
 
+<script>
+	$('.average-review-rating').raty({
+		readOnly: true,
+		score: function(){
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+
+</script>
