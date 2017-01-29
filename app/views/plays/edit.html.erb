@@ -1,3 +1,4 @@
+<div class="edit-play-form">
 <h1>Edit Play</h1>
 <%= simple_form_for @play, html: {multipart: true} do |f| %>
   <%= f.select :category_id, @categories%>
@@ -9,4 +10,5 @@
 <% end %>
 
 <%= link_to "Back", plays_path %>
+</div>
 
