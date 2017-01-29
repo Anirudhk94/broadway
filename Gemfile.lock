@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/bmc/jquery-raty-rails.git
+  revision: d36753c77c9b825e6e2746c1c70c3b11b85b86cc
+  specs:
+    jquery-raty-rails (0.0.2)
+      rails (>= 3.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -190,6 +197,7 @@ DEPENDENCIES
   devise (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
+  jquery-raty-rails!
   listen (~> 3.0.5)
   paperclip (~> 4.3, >= 4.3.6)
   puma (~> 3.0)
