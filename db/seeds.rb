@@ -1,6 +1,6 @@
-u = User.new([
+u = User.new(
   {email: "admin@broadway.com", encrypted_password: "$2a$11$CSfSaj8iN6A.uc.5meU18ujjMtU7rxb9tgYm0lCAO8JFuogUi3w5.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-01-29 15:08:50", last_sign_in_at: "2017-01-29 15:08:50", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
-])
+)
 u.save!(validate: false)
 
 Category.create!([
